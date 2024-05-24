@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
-                    <div class="table-responsive p-0" id="tabel-customer">
+                    <div class="table-responsive p-0" id="tabel-customer" style="max-height: 400px; overflow-y: auto;">
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
@@ -39,8 +39,9 @@
                                             {{ $customer->address }}
                                         </td>
                                         <td class="text-break text-wrap">
-                                            <div class="text-center d-flex flex-column gap-2">
-                                                <a href=""><span class="badge badge-sm bg-gradient-success">Edit</span>
+                                            <div class="justify-content-center d-flex flex-column gap-2">
+                                                <a href=""><span
+                                                        class="badge badge-sm bg-gradient-success">Edit</span>
                                                 </a>
                                                 <a href="">
                                                     <span class="badge badge-sm bg-gradient-Danger">Delete</span>

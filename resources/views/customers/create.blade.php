@@ -9,23 +9,52 @@
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
+                    {{-- @if ($errors->any())                    
+                        <div class="">
+
+                        </div>
+                    @endif --}}
                     <form action="/customers" method="POST" class="px-4">
                         @csrf
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Nama</label>
-                            <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama">                            
+                            <label for="nama" class="form-label">Nama</label>
+                            <input name="name" type="text" class="form-control" id="nama"
+                                aria-describedby="emailHelp" placeholder="Nama">
+                            <div class="text-danger text-xs">
+                                @if ($errors->has('name'))
+                                    {{ $errors->first('name') }}
+                                @endif
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Email</label>
-                            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">                            
+                            <input name="email" type="text" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Email">
+                            <div class="text-danger text-xs">
+                                @if ($errors->has('email'))
+                                    {{ $errors->first('email') }}
+                                @endif
+                            </div>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Phone</label>
-                            <input name="phone" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone">                            
+                            <label for="phone" class="form-label">Phone</label>
+                            <input name="phone" type="text" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="phone" placeholder="Phone">
+                            <div class="text-danger text-xs">
+                                @if ($errors->has('phone'))
+                                    {{ $errors->first('phone') }}
+                                @endif
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Address</label>
-                            <textarea name="address" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Address" rows="3"></textarea>
+                            <textarea name="address" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                placeholder="Address" rows="3"></textarea>
+                            <div class="text-danger text-xs">
+                                @if ($errors->has('address'))
+                                    {{ $errors->first('address') }}
+                                @endif
+                            </div>
                         </div>
                         <button type="submit" class="btn bg-gradient-primary">Submit</button>
                     </form>
