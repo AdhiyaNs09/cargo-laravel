@@ -151,7 +151,7 @@
 
             <div class="container-fluid py-4">
 
-                @if (session()->has('success'))
+                {{-- @if (session()->has('success'))
                     <div class="alert alert-primary alert-dismissible fade show" role="alert">
                         <span class="alert-icon"><i class="ni ni-like-2"></i></span>
                         <span class="alert-text"><strong>Primary!</strong> {{ session('success') }}</span>
@@ -159,7 +159,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                @endif
+                @endif --}}
 
 
                 {{-- <div class="row mb-4 auto">
