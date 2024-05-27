@@ -1,4 +1,4 @@
-@extends('layouts.master');
+@extends('layouts.master')
 @section('content')
     <div class="row">
         <div class="col-12">
@@ -32,20 +32,22 @@
                             <tbody>
                                 @foreach ($customers as $customer)
                                     <tr>
-                                        <td class="text-wrap">{{ $customer->name }}</td>
-                                        <td class="text-wrap text-break">{{ $customer->email }}</td>
-                                        <td class="text-center text-wrap text-break">{{ $customer->phone }}</td>
+                                        <td>{{ $customer->name }}</td>
+                                        <td>{{ $customer->email }}</td>
+                                        <td>{{ $customer->phone }}</td>
                                         <td class="text-wrap">
                                             {{ $customer->address }}
                                         </td>
-                                        <td class="text-break text-wrap">
-                                            <div class="justify-content-center d-flex flex-column gap-2">
-                                                <a href=""><span
-                                                        class="badge badge-sm bg-gradient-success">Edit</span>
+                                        <td>
+                                            <div class="d-flex justify-content-center align-items-center gap-1">
+                                                <a href="/customers/{{ $customer->id }}/edit">
+                                                    <span class="btn btn-sm bg-gradient-success">Edit</span>
                                                 </a>
-                                                <a href="">
-                                                    <span class="badge badge-sm bg-gradient-Danger">Delete</span>
-                                                </a>
+                                                <form class="m-0" action="/customers/{{ $customer->id }}" method="POST">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                    <input class="btn btn-sm bg-gradient-danger" type="submit" value="Delete">
+                                                </form>
                                             </div>
                                         </td>
                                     </tr>

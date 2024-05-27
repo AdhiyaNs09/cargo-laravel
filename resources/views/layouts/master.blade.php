@@ -6,6 +6,7 @@
     </head>
 
     <body class="g-sidenav-show  bg-gray-100">
+
         @include('sweetalert::alert')
         {{-- sidebar start --}}
         @include('layouts.sidebar')
@@ -150,30 +151,6 @@
 
 
             <div class="container-fluid py-4">
-
-                {{-- @if (session()->has('success'))
-                    <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                        <span class="alert-icon"><i class="ni ni-like-2"></i></span>
-                        <span class="alert-text"><strong>Primary!</strong> {{ session('success') }}</span>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                @endif --}}
-
-
-                {{-- <div class="row mb-4 auto">
-                    <div class="toast fade show align-items-center" role="alert" aria-live="assertive"
-                        aria-atomic="true">
-                        <div class="d-flex">
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                            <button type="button" class="btn-close btn-close-primary me-2 m-auto" data-bs-dismiss="toast"
-                                aria-label="Close"></button>
-                        </div>
-                    </div>
-                </div> --}}
 
                 @yield('content')
 
